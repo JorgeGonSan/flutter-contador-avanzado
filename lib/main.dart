@@ -39,7 +39,11 @@ class _MyContadorAvanzaadoState extends State<MyContadorAvanzaado> {
                       ),
 
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            contador++;
+                          });
+                        },
                         icon: Icon(Icons.add),
                       ),
                     ),
@@ -51,14 +55,25 @@ class _MyContadorAvanzaadoState extends State<MyContadorAvanzaado> {
                       ),
 
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            contador--;
+                          });
+                        },
                         icon: Icon(Icons.remove),
                       ),
                     ),
                   ],
                 ),
                 SizedBox(height: 30),
-                ElevatedButton(onPressed: () {}, child: Text("Reset")),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      contador = 0;
+                    });
+                  },
+                  child: Text("Reset"),
+                ),
               ],
             ),
           ),
