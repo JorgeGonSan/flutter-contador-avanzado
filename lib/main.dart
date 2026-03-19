@@ -13,6 +13,7 @@ class MyContadorAvanzaado extends StatefulWidget {
 
 class _MyContadorAvanzaadoState extends State<MyContadorAvanzaado> {
   int contador = 0;
+  String mensaje = "";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,7 +42,14 @@ class _MyContadorAvanzaadoState extends State<MyContadorAvanzaado> {
                       child: IconButton(
                         onPressed: () {
                           setState(() {
-                            contador++;
+                            if (contador < 20) {
+                              contador++;
+                            }
+                            if (contador == 20) {
+                              mensaje = "No puede ser mayor que 20";
+                            } else {
+                              mensaje = "";
+                            }
                           });
                         },
                         icon: Icon(Icons.add),
@@ -57,7 +65,14 @@ class _MyContadorAvanzaadoState extends State<MyContadorAvanzaado> {
                       child: IconButton(
                         onPressed: () {
                           setState(() {
-                            contador--;
+                            if (contador > 0) {
+                              contador--;
+                            }
+                            if (contador == 0) {
+                              mensaje = "No puede ser menor que 0";
+                            } else {
+                              mensaje = "";
+                            }
                           });
                         },
                         icon: Icon(Icons.remove),
@@ -74,6 +89,7 @@ class _MyContadorAvanzaadoState extends State<MyContadorAvanzaado> {
                   },
                   child: Text("Reset"),
                 ),
+                Text(mensaje),
               ],
             ),
           ),
