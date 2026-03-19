@@ -1,17 +1,21 @@
 # contador_con_limites_y_validacion
 
-A new Flutter project.
+# Contador Avanzado – Flutter
 
-## Getting Started
+## Qué hace
 
-This project is a starting point for a Flutter application.
+- Incrementa y decrementa un contador
+- Botón de reset para volver a 0
+- No permite valores menores que 0 ni mayores que 20
+- Muestra mensaje dinámico cuando se alcanza un límite
 
-A few resources to get you started if this is your first Flutter project:
+## Conceptos aprendidos
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- `setState` para actualizar UI
+- Validaciones y condiciones antes de actualizar estado
+- Uso de Row, Column, IconButton y ElevatedButton
+- Mensajes dinámicos en pantalla
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Captura
+
+![Captura](assets/Captura.PNG)
