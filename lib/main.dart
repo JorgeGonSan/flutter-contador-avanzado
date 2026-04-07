@@ -48,9 +48,8 @@ class _MyContadorAvanzadoState extends State<MyContadorAvanzado> {
                     ),
 
                     child: IconButton(
-                      onPressed: () {
-                        _incrementar();
-                      },
+                      onPressed: _incrementar,
+
                       icon: Icon(Icons.add),
                     ),
                   ),
@@ -62,21 +61,14 @@ class _MyContadorAvanzadoState extends State<MyContadorAvanzado> {
                     ),
 
                     child: IconButton(
-                      onPressed: () {
-                        _decrementar();
-                      },
+                      onPressed: _decrementar,
                       icon: Icon(Icons.remove),
                     ),
                   ),
                 ],
               ),
               SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {
-                  _reset();
-                },
-                child: Text("Reset"),
-              ),
+              ElevatedButton(onPressed: _reset, child: Text("Reset")),
               Text(mensaje),
             ],
           ),
@@ -119,6 +111,7 @@ class _MyContadorAvanzadoState extends State<MyContadorAvanzado> {
   void _reset() {
     setState(() {
       contador = 0;
+      mensaje = "";
     });
   }
 }
