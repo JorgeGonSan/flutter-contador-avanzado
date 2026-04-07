@@ -49,16 +49,7 @@ class _MyContadorAvanzadoState extends State<MyContadorAvanzado> {
 
                     child: IconButton(
                       onPressed: () {
-                        setState(() {
-                          if (contador < 20) {
-                            contador++;
-                          }
-                          if (contador == 20) {
-                            mensaje = "No puede ser mayor que 20";
-                          } else {
-                            mensaje = "";
-                          }
-                        });
+                        _incrementar();
                       },
                       icon: Icon(Icons.add),
                     ),
@@ -72,16 +63,7 @@ class _MyContadorAvanzadoState extends State<MyContadorAvanzado> {
 
                     child: IconButton(
                       onPressed: () {
-                        setState(() {
-                          if (contador > 0) {
-                            contador--;
-                          }
-                          if (contador == 0) {
-                            mensaje = "No puede ser menor que 0";
-                          } else {
-                            mensaje = "";
-                          }
-                        });
+                        _decrementar();
                       },
                       icon: Icon(Icons.remove),
                     ),
@@ -91,9 +73,7 @@ class _MyContadorAvanzadoState extends State<MyContadorAvanzado> {
               SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  setState(() {
-                    contador = 0;
-                  });
+                  _reset();
                 },
                 child: Text("Reset"),
               ),
@@ -103,5 +83,42 @@ class _MyContadorAvanzadoState extends State<MyContadorAvanzado> {
         ),
       ),
     );
+  }
+
+  //  Funciones
+
+  //  Incrementa el contador en 1 hasta un máximo de 20 y muestra msg del límite
+  void _incrementar() {
+    setState(() {
+      if (contador < 20) {
+        contador++;
+      }
+      if (contador == 20) {
+        mensaje = "No puede ser mayor que 20";
+      } else {
+        mensaje = "";
+      }
+    });
+  }
+
+  //  Decrementa el contador en 1 hasta 0 y muestra msg del límite
+  void _decrementar() {
+    setState(() {
+      if (contador > 0) {
+        contador--;
+      }
+      if (contador == 0) {
+        mensaje = "No puede ser menor que 0";
+      } else {
+        mensaje = "";
+      }
+    });
+  }
+
+  //Establece el contador a 0
+  void _reset() {
+    setState(() {
+      contador = 0;
+    });
   }
 }
