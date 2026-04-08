@@ -73,7 +73,7 @@ class _MyContadorAvanzadoState extends State<MyContadorAvanzado> {
         contador++;
       }
       if (contador == 20) {
-        mensaje = "No puede ser mayor que 20";
+        mensaje = "Máximo alcanzado (20)";
       } else {
         mensaje = "";
       }
@@ -87,7 +87,7 @@ class _MyContadorAvanzadoState extends State<MyContadorAvanzado> {
         contador--;
       }
       if (contador == 0) {
-        mensaje = "No puede ser menor que 0";
+        mensaje = "Mínimo alcanzado (0)";
       } else {
         mensaje = "";
       }
